@@ -41,5 +41,21 @@ table {
   width: 100%;
 }
 tr {
-  border-top: 1px solid #c7c7c7;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.btn {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+nav {
+  background-color: #ff6600 !important;
+}
+.logo {
+  background: #ff6600;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

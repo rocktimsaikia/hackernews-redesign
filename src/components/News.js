@@ -22,7 +22,7 @@ const News = ({ list }) => {
                   />
                 </td>
                 <td style={{ padding: "0px", paddingRight: "20px" }}>
-                  {" "}
+                  {" " + " "}
                   {score}
                 </td>
                 <td style={{ paddingRight: "100px", fontWeight: "600" }}>

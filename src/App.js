@@ -18,7 +18,7 @@ const App = () => {
       const { data } = await axios.get(
         `https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty`
       );
-      data.slice(0, 5).map(item => arr.push(item));
+      data.slice(0, 20).map(item => arr.push(item));
     } catch (error) {
       return error;
     }
