@@ -4,7 +4,7 @@ import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 const Header = () => {
   return (
     <div>
-      <Navbar variant="dark">
+      <Navbar style={{ backgroundColor: " #ff6600" }}>
         <Navbar.Brand href="#home">
           <span className="logo">Y</span> Hacker News
         </Navbar.Brand>

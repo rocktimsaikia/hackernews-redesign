@@ -1,39 +1,17 @@
-.numbers {
-  font-size: 13px;
-  box-shadow: 0px 20px 50px -19px rgba(0, 0, 0, 0.75);
-  padding: 10px;
-  background: #fff;
-  color: #8f8c8c;
-}
-.title {
-  font-weight: bold;
-  color: rgb(95, 95, 95);
-}
-.story {
-  box-shadow: 0px 20px 50px -19px rgba(0, 0, 0, 0.75);
-  background: #fff;
-  color: #8f8c8c;
-  padding: 10px;
-}
-
-.points,
-.comments {
-  font-size: 20px;
-  color: #ff6600;
-}
-.readmore {
-  float: right;
-  margin-top: -18px;
-  background: #e9e9e9;
-  padding: 5px;
-  padding-right: 15px;
-  padding-left: 15px;
-  border-radius: 20px;
-}
 td {
   padding-right: 20px;
   font-size: 14px;
 }
+td > a {
+  color: #000;
+}
+td > a:link {
+  text-decoration: none !important;
+}
+td > a:hover {
+  color: #ff6600;
+}
+
 .main {
   text-align: left;
 }
@@ -48,8 +26,14 @@ tr {
   color: #ffffff !important;
   border-color: #ffffff !important;
 }
-nav {
-  background-color: #ff6600 !important;
+.navbar2 > span {
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #ffffff;
+  border-radius: 20px;
 }
 .logo {
   background: #ff6600;
