@@ -4,4 +4,6 @@ body {
   text-align: center;
   background: #ffffff;
   font-family: "Open Sans", sans-serif;
+  width: 100%;
+  display: table;
 }

@@ -1,27 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "./components/layouts/Header";
 import Navbar2 from "./components/layouts/Navbar2";
 import Footer from "./components/layouts/Footer";
 import News from "./components/News";
+import Loader from "./components/layouts/Loader";
 import "./App.css";
 import axios from "axios";
+import Pace from "react-pace-progress";
 
 const App = () => {
+  const [state, setState] = useState(20);
+  const [isLoading, setLoadingState] = useState(false);
   const [list, setList] = useState([]);
+  const [refSate, setRefState] = useState("topstories");
+
+  const newsRef = useRef(null);
+  const loaderRef = useRef(null);
 
   useEffect(() => {
-    getData("topstories").then(arr =>
+    getData("topstories", state).then(arr =>
       getDeatils(arr).then(item => setList(item))
     );
   }, []);
 
-  const getData = async function(category) {
+  const getData = async function(category, n) {
     const arr = [];
     try {
       const { data } = await axios.get(
         `https://hacker-news.firebaseio.com/v0/${category}.json?print=pretty`
       );
-      data.slice(0, 20).map(item => arr.push(item));
+      data.slice(0, n).map(item => arr.push(item));
     } catch (error) {
       return error;
     }
@@ -50,13 +58,65 @@ const App = () => {
     return results;
   };
 
+  const formatLoaders = (item, callback) => {
+    setList(item);
+    callback();
+  };
+
+  const handleClick = text => {
+    setRefState(text);
+    newsRef.current.style.display = "none";
+    loaderRef.current.style.display = "block";
+    getData(text, state).then(arr =>
+      getDeatils(arr).then(item =>
+        formatLoaders(item, () => {
+          newsRef.current.style.display = "block";
+          loaderRef.current.style.display = "none";
+        })
+      )
+    );
+  };
+
+  const setLoader = (item, callback) => {
+    setList(item);
+    callback();
+  };
+
+  const onShowMoreClick = () => {
+    setLoadingState(true);
+    const n = state + 20;
+    getData(refSate, n).then(arr =>
+      getDeatils(arr).then(item =>
+        setLoader(item, () => {
+          setLoadingState(false);
+          setState(n);
+          setState(20);
+        })
+      )
+    );
+  };
+
   return (
     <div>
+      <div className="sticky">
+        {isLoading ? <Pace color="#ff6600" height="3px" /> : null}
+      </div>
       <Header />
-      <Navbar2 />
-      <News list={list} />
+      <Navbar2 handleClick={handleClick} />
+      <div ref={loaderRef} style={{ display: "none" }}>
+        <Loader />
+      </div>
+      <div ref={newsRef} className="mt-2">
+        <News list={list} onShowMoreClick={onShowMoreClick} />
+      </div>
+      <div className="text-center m-1">
+        <span className="more-btn" onClick={onShowMoreClick}>
+          More
+        </span>
+      </div>
       <Footer />
     </div>
   );
 };
+
 export default App;
