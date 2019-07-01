@@ -1,97 +1,148 @@
-import React from "react";
-import timeago from "epoch-timeago";
+import React, { useEffect, useState } from "react";
+import { withRouter } from "react-router-dom";
+import axios from "axios";
+import Stories from "./layouts/Stories";
+import Loader from "./layouts/Loader";
 
-const News = ({ list }) => {
+const News = props => {
+  const [state, setState] = useState([]);
+  const [count, setCount] = useState(21);
+  const [isLoading, setLoading] = useState(false);
+
+  //a global index to keep track of the all showed items
+
+  //setting different api params for different routes
+  const checkRoute = () => {
+    let route;
+    switch (props.location.pathname) {
+      case "/":
+        route = "/topstories";
+        break;
+
+      case "/shows":
+        route = "/showstories";
+        break;
+
+      case "/ask":
+        route = "/askstories";
+        break;
+
+      case "/jobs":
+        route = "/jobstories";
+        break;
+
+      case "/top":
+        route = "/topstories";
+        break;
+
+      case "/new":
+        route = "/newstories";
+        break;
+
+      case "/best":
+        route = "/beststories";
+        break;
+
+      default:
+        route = "/notFound";
+        break;
+    }
+    return route;
+  };
+  const formatComponent = (item, callback) => {
+    setState(item);
+    callback();
+  };
+  useEffect(() => {
+    // function executes here ,calling two async function
+    getData(checkRoute(), 0, 20).then(arr => {
+      getDeatils(arr).then(item =>
+        formatComponent(item, () => {
+          props.hideLoader();
+        })
+      );
+    });
+  }, []);
+
+  //getting all the data ids and storing them in an array
+  const getData = async function(category, start, end) {
+    const arr = [];
+    try {
+      const { data } = await axios.get(
+        `https://hacker-news.firebaseio.com/v0${category}.json?print=pretty`
+      );
+      data.slice(start, end).map(item => arr.push(item));
+    } catch (error) {
+      return error;
+    }
+    return arr;
+  };
+
+  //fetching data from those ids and storing only the necessary datas in an array
+  const getDeatils = async function(arr) {
+    const promises = arr.map(async item => {
+      const { data } = await axios.get(
+        `https://hacker-news.firebaseio.com/v0/item/${item}.json?print=pretty`
+      );
+      return {
+        item,
+        author: data.by,
+        title: data.title,
+        score: data.score,
+        comments_count: data.descendants,
+        time: data.time,
+        url:
+          data.url != null
+            ? data.url
+            : `https://news.ycombinator.com/item?id=${item}`
+      };
+    });
+    const results = await Promise.all(promises);
+    return results;
+  };
+
+  const showMoreContent = () => {
+    setLoading(true);
+    getData(checkRoute(), count, count + 20).then(arr => {
+      getDeatils(arr).then(item =>
+        formatComponent(item, () => {
+          setCount(count + 20);
+          setLoading(false);
+          window.scrollTo(0, 0);
+        })
+      );
+    });
+  };
+
+  //return statement
   return (
-    <div className="container-fluid main">
-      <table className="table">
-        <tbody>
-          {list.map(
-            (
-              { item, author, title, score, comments_count, time, url },
-              index
-            ) => (
-              <tr key={item}>
-                <td>{index + 1}</td>
-                <td style={{ padding: "0px" }}>
-                  <i
-                    className="fas fa-sort-up"
-                    style={{
-                      fontSize: "30px",
-                      marginTop: "16px",
-                      padding: "0px",
-                      marginRight: "0px"
-                    }}
-                  />
-                </td>
-                <td
-                  style={{
-                    padding: "0px",
-                    paddingTop: "13px",
-                    paddingRight: "15px",
-                    color: "#828282"
-                  }}
-                >
-                  &nbsp;
-                  {score}
-                </td>
-                <td style={{ paddingRight: "80px", fontWeight: "600" }}>
-                  <a href={url} target="_blank" rel="noopener noreferrer">
-                    {title}
-                  </a>
-                </td>
-                <td style={{ color: "#828282" }}>
-                  <i className="fas fa-user" />{" "}
-                  <a
-                    href={`https://news.ycombinator.com/user?id=${author}`}
-                    target="_blank"
-                    style={{ color: "#828282" }}
-                    rel="noopener noreferrer"
-                  >
-                    {author}
-                  </a>
-                </td>
-                <td style={{ color: "#828282" }}>
-                  <i className="fas fa-globe" />{" "}
-                  <a
-                    href={`https://${
-                      url
-                        .replace("http://", "")
-                        .replace("https://", "")
-                        .split(/[/?#]/)[0]
-                    }`}
-                    target="_blank"
-                    style={{ color: "#828282" }}
-                    rel="noopener noreferrer"
-                  >
-                    {url
-                      .replace("http://", "")
-                      .replace("https://", "")
-                      .split(/[/?#]/)[0]
-                      .replace("www.", "")}
-                  </a>
-                </td>
-                <td style={{ color: "#828282" }}>
-                  <i className="fas fa-clock"> {timeago(time * 1000)}</i>
-                </td>
-                <td style={{ color: "#828282" }}>
-                  <i className="far fa-comment-alt" />{" "}
-                  <a
-                    href={`https://news.ycombinator.com/item?id=${item}`}
-                    target="_blank"
-                    style={{ color: "#828282" }}
-                    rel="noopener noreferrer"
-                  >
-                    {comments_count}
-                  </a>
-                </td>
-              </tr>
-            )
-          )}
-        </tbody>
-      </table>
-    </div>
+    <>
+      {props.isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <div
+            className={
+              isLoading
+                ? "container-fluid main overlay"
+                : "container-fluid main"
+            }
+          >
+            <table className="table">
+              <tbody>
+                <Stories state={state} />
+              </tbody>
+            </table>
+          </div>
+          <div className="text-center m-1">
+            <span className="more-btn" onClick={showMoreContent}>
+              More
+            </span>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
-export default News;
+export default withRouter(News);

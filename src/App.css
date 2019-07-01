@@ -19,16 +19,6 @@ table {
   width: 100%;
 }
 
-.table > tbody > tr:nth-last-child(2) {
-  opacity: 0.6;
-}
-.table > tbody > tr:last-child {
-  opacity: 0.4;
-}
-/* tr {
-  border-bottom: 1px solid #c7c7c7;
-} */
-
 .btn {
   color: #ffffff !important;
   border-color: #ffffff !important;
@@ -37,14 +27,9 @@ table {
   background: #fff !important;
   color: rgb(92, 92, 92) !important;
 }
-.navbar2 > span {
-  cursor: pointer;
-  margin-right: 10px;
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
+
+.navbar2 > span :hover {
   box-shadow: 0px 2px 20px -7px rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
 }
 .logo {
   background: #ff6600;
@@ -54,10 +39,7 @@ table {
   padding-left: 10px;
   padding-right: 10px;
 }
-.defaultColor {
-  background: #fff;
-  color: #000;
-}
+
 .changableColor {
   background: #ff6600;
   color: #ffff;
@@ -102,6 +84,7 @@ ul > li > a {
 }
 
 .source {
+  text-decoration: none;
   color: #000;
   border-radius: 20px;
   border: 2px solid #fff;
@@ -110,4 +93,49 @@ ul > li > a {
   padding-bottom: 5px;
   background: #ffffff;
   cursor: pointer;
+}
+
+.source:hover {
+  color: #ff6600;
+}
+
+.dropdown {
+  box-shadow: 0px 2px 10px -7px rgba(0, 0, 0, 0.75);
+
+  border-radius: 20px;
+
+  border: 0px;
+
+  background: #fff;
+
+  margin-right: 15px;
+}
+.dropdown > button#dropdown-basic {
+  border-radius: 20px;
+
+  border: 0px;
+
+  border-top-color: currentcolor;
+  border-right-color: currentcolor;
+  border-bottom-color: currentcolor;
+  border-left-color: currentcolor;
+
+  background: #fff;
+
+  color: #000 !important;
+}
+
+.btn-success:focus,
+.btn-success.focus {
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+iframe > .github-btn-large .gh-btn,
+.github-btn-large .gh-count {
+  background: #fff !important;
+  border-radius: 20px !important;
+}
+
+.overlay {
+  opacity: 0.3;
 }
