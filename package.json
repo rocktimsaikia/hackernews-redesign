@@ -6,13 +6,10 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "epoch-timeago": "^1.1.9",
-    "nprogress": "^0.2.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-content-loader": "^4.2.1",
     "react-dom": "^16.8.6",
-    "react-loading": "^2.0.3",
-    "react-pace-progress": "^2.0.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.8"
   },
@@ -30,8 +27,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "gh-pages": "^2.0.1"
-  }
+  ]
 }
