@@ -112,9 +112,7 @@ ul > li > a {
 }
 .dropdown > button#dropdown-basic {
   border-radius: 20px;
-
   border: 0px;
-
   border-top-color: currentcolor;
   border-right-color: currentcolor;
   border-bottom-color: currentcolor;
@@ -125,17 +123,13 @@ ul > li > a {
   color: #000 !important;
 }
 
-.btn-success:focus,
-.btn-success.focus {
-  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5) !important;
-}
-
-iframe > .github-btn-large .gh-btn,
-.github-btn-large .gh-count {
-  background: #fff !important;
-  border-radius: 20px !important;
-}
-
 .overlay {
   opacity: 0.3;
+}
+.navlink {
+  transition: transform 0.2s;
+}
+.navLink:hover {
+  transform: scale(0.9);
+  box-shadow: 0px 2px 5px -7px rgba(0, 0, 0, 0.75);
 }

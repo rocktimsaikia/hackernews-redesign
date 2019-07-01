@@ -34,16 +34,31 @@ const Navbar2 = ({ showLoader }) => {
           </Dropdown.Menu>
         </Dropdown>
 
-        <Link to="/shows" style={linkStyle} onClick={showLoader}>
-          <span className="defaultColor">Show</span>
+        <Link
+          to="/shows"
+          style={linkStyle}
+          onClick={showLoader}
+          className="navLink"
+        >
+          <span>Show</span>
         </Link>
 
-        <Link to="/ask" style={linkStyle} onClick={showLoader}>
-          <span className="defaultColor">Ask</span>
+        <Link
+          to="/ask"
+          style={linkStyle}
+          onClick={showLoader}
+          className="navLink"
+        >
+          <span>Ask</span>
         </Link>
 
-        <Link to="/jobs" style={linkStyle} onClick={showLoader}>
-          <span className="defaultColor">Jobs</span>
+        <Link
+          to="/jobs"
+          style={linkStyle}
+          onClick={showLoader}
+          className="navLink"
+        >
+          <span>Jobs</span>
         </Link>
       </Nav>
     </Navbar>

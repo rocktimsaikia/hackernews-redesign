@@ -135,7 +135,7 @@ const News = props => {
             </table>
           </div>
           <div className="text-center m-1">
-            <span className="more-btn" onClick={showMoreContent}>
+            <span className="more-btn " onClick={showMoreContent}>
               More
             </span>
           </div>
