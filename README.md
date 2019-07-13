@@ -4,7 +4,7 @@ In an effort to learn to react here is a react based hacker news clone from scra
 
 <p align="center" margin-bottom="0">
   <a href="https://hackernews-redesign.netlify.com" target="_blank">
-    <img alt="Hacker News Clone Demo" width="auto" height="auto" src="https://i.ibb.co/FbWMgb4/Flat-Browser-Mockup.jpg">
+    <img alt="Hacker News Clone Demo" width="auto" height="auto" src="https://i.ibb.co/wNMB34y/screely-1563032342931.png">
   </a>
 </p>
 <p align="center">
