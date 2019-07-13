@@ -34,51 +34,53 @@ const Stories = ({ state }) => {
                 {title}
               </a>
             </td>
-            <td style={{ color: "#828282" }}>
-              <i className="fas fa-user" />{" "}
-              <a
-                href={`https://news.ycombinator.com/user?id=${author}`}
-                target="_blank"
-                style={{ color: "#828282" }}
-                rel="noopener noreferrer"
-              >
-                {author}
-              </a>
-            </td>
-            <td style={{ color: "#828282" }}>
-              <i className="fas fa-globe" />{" "}
-              <a
-                href={`https://${
-                  url
+            <React.Fragment className="info">
+              <td style={{ color: "#828282" }}>
+                <i className="fas fa-user" />{" "}
+                <a
+                  href={`https://news.ycombinator.com/user?id=${author}`}
+                  target="_blank"
+                  style={{ color: "#828282" }}
+                  rel="noopener noreferrer"
+                >
+                  {author}
+                </a>
+              </td>
+              <td style={{ color: "#828282" }}>
+                <i className="fas fa-globe" />{" "}
+                <a
+                  href={`https://${
+                    url
+                      .replace("http://", "")
+                      .replace("https://", "")
+                      .split(/[/?#]/)[0]
+                  }`}
+                  target="_blank"
+                  style={{ color: "#828282" }}
+                  rel="noopener noreferrer"
+                >
+                  {url
                     .replace("http://", "")
                     .replace("https://", "")
                     .split(/[/?#]/)[0]
-                }`}
-                target="_blank"
-                style={{ color: "#828282" }}
-                rel="noopener noreferrer"
-              >
-                {url
-                  .replace("http://", "")
-                  .replace("https://", "")
-                  .split(/[/?#]/)[0]
-                  .replace("www.", "")}
-              </a>
-            </td>
-            <td style={{ color: "#828282" }}>
-              <i className="fas fa-clock"> {timeago(time * 1000)}</i>
-            </td>
-            <td style={{ color: "#828282" }}>
-              <i className="far fa-comment-alt" />{" "}
-              <a
-                href={`https://news.ycombinator.com/item?id=${item}`}
-                target="_blank"
-                style={{ color: "#828282" }}
-                rel="noopener noreferrer"
-              >
-                {comments_count}
-              </a>
-            </td>
+                    .replace("www.", "")}
+                </a>
+              </td>
+              <td style={{ color: "#828282" }}>
+                <i className="fas fa-clock"> {timeago(time * 1000)}</i>
+              </td>
+              <td style={{ color: "#828282" }}>
+                <i className="far fa-comment-alt" />{" "}
+                <a
+                  href={`https://news.ycombinator.com/item?id=${item}`}
+                  target="_blank"
+                  style={{ color: "#828282" }}
+                  rel="noopener noreferrer"
+                >
+                  {comments_count}
+                </a>
+              </td>
+            </React.Fragment>
           </tr>
         )
       )}

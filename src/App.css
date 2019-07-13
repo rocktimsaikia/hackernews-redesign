@@ -133,3 +133,24 @@ ul > li > a {
   transform: scale(0.9);
   box-shadow: 0px 2px 5px -7px rgba(0, 0, 0, 0.75);
 }
+
+@media all and (max-width: 768px) {
+  td {
+    font-size: 14px !important;
+  }
+  table > tbody > tr {
+    width: 100% !important;
+  }
+  table > tbody > tr > td:nth-child(3) {
+    padding-right: 0px !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  table > tbody > tr > td:nth-child(4),
+  table > tbody > tr > td:nth-child(5),
+  table > tbody > tr > td:nth-child(6),
+  table > tbody > tr > td:nth-child(7) {
+    display: block !important;
+    width: 100% !important;
+  }
+}
