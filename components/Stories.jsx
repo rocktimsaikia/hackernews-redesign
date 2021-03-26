@@ -4,7 +4,7 @@ import timeAgo from "epoch-timeago";
 export default function Show({ stories }) {
   return stories.map((story, i) => (
     <div className={`news-card z-${i} flex flex-row`}>
-      <div className="px-5 flex flex-col justify-center">
+      <div className="px-5 flex flex-col justify-center text-center w-16">
         <svg
           height="18"
           aria-hidden="true"
@@ -21,7 +21,7 @@ export default function Show({ stories }) {
             d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"
           ></path>
         </svg>
-        <p className="text-gray-500 text-xs font-medium">124</p>
+        <p className="text-gray-500 text-xs font-medium">{story.score}</p>
       </div>
       <div className="px-5">
         <h2 className="font-medium text-sm text-gray-700">{story.title}</h2>
