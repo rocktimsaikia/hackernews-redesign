@@ -1,12 +1,6 @@
 import React from "react";
-import FireIcon from "./icons/fire";
-import TimerIcon from "./icons/timer";
-import StatsIcon from "./icons/stats";
-import QuestionIcon from "./icons/question";
-import CollectionIcon from "./icons/collection";
-import DesktopIcon from "./icons/desktop";
-import BriefcaseIcon from "./icons/briefcase";
-import GithubIcon from "./icons/github";
+import Link from "next/link";
+import site from "../site.config";
 
 export default function Sidebar() {
   return (
@@ -26,40 +20,15 @@ export default function Sidebar() {
         <div className="mb-10">
           <h1 className="sidemenu-title">Category</h1>
           <ul>
-            <li className="sidemenu-item">
-              <CollectionIcon /> All
-            </li>
-            <li className="sidemenu-item">
-              <FireIcon /> Best
-            </li>
-            <li className="sidemenu-item">
-              <TimerIcon /> New
-            </li>
-            <li className="sidemenu-item">
-              <StatsIcon /> Top
-            </li>
-            <li className="sidemenu-item">
-              <QuestionIcon /> Ask
-            </li>
-            <li className="sidemenu-item">
-              <DesktopIcon /> Show
-            </li>
-            <li className="sidemenu-item">
-              <BriefcaseIcon /> Job
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h1 className="sidemenu-title">Extra</h1>
-          <ul>
-            <li>
-              <a
-                href="https://github.com/RocktimSaikia/hacker-news-redesign"
-                className="sidemenu-item"
-              >
-                <GithubIcon /> Github
-              </a>
-            </li>
+            {site.tabs.map((tab) => (
+              <li>
+                <Link href={tab.href}>
+                  <a className="sidemenu-item">
+                    {tab.icon} {tab.title}
+                  </a>
+                </Link>
+              </li>
+            ))}
             <li className="sidemenu-item cursor-auto">
               <a
                 href="https://rocktimsiakia.now.sh"
