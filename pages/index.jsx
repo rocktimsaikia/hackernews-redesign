@@ -8,7 +8,7 @@ export async function getStaticProps() {
 }
 
 export default function Home(props) {
-  const { data, error } = useSWR("/api/topstories", fetcher, {
+  const { data, error } = useSWR("/api/frontstories", fetcher, {
     initialData: props.posts,
   });
 
