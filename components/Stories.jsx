@@ -27,15 +27,13 @@ export default function Show({ stories }) {
         <h2 className="font-medium text-sm text-gray-700">{story.title}</h2>
         <div className="flex mt-2">
           <p className="text-xs mr-4 text-gray-500">
-            by <span className="text-red-500 font-medium">{story.author}</span>
+            by <span className="text-red-500 font-medium">{story.user}</span>
           </p>
-          <p className="text-xs text-gray-500 mr-4">
-            {timeAgo(story.time * 1000)}
-          </p>
+          <p className="text-xs text-gray-500 mr-4">{story.time}</p>
           <figure className="flex items-start">
             <ChatIcon />
             <figcaption className="text-xs text-gray-500">
-              {story.comments_count}
+              {story.comment_count}
             </figcaption>
           </figure>
         </div>

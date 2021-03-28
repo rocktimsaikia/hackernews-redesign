@@ -1,30 +1,10 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { map } from "p-iteration";
-
 export default async (req, res) => {
-  let items = await fetch(
-    `https://hacker-news.firebaseio.com/v0/jobstories.json?print=pretty`
-  );
-  items = await items.json();
-
-  const stories = await map(items.slice(0, 20), async (item) => {
-    let data = await fetch(
-      `https://hacker-news.firebaseio.com/v0/item/${item}.json?print=pretty`
-    );
-    data = await data.json();
-    return {
-      item,
-      author: data.by,
-      title: data.title,
-      score: data.score,
-      comments_count: data.descendants,
-      time: data.time,
-      url:
-        data.url != null
-          ? data.url
-          : `https://news.ycombinator.com/item?id=${item}`,
-    };
+  const data = await fetch('https://hn-api.glitch.me/api/jobstories', {
+    headers: {
+      Authorization: 'D7x1tecF8l1LIOcVz18VMwKR4ozyUobo'
+    }
   });
+  const stories = await data.json();
 
-  res.status(200).json(stories);
+  res.send(stories);
 };

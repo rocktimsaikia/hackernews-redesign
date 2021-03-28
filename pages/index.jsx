@@ -3,7 +3,7 @@ import fetcher from "../lib/fetcher";
 import Stories from "../components/Stories";
 
 export async function getStaticProps() {
-  const posts = await fetcher("/api/topstories");
+  const posts = await fetcher("/api/frontstories");
   return { props: { posts } };
 }
 
