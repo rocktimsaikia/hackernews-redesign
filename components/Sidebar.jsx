@@ -5,7 +5,7 @@ import site from "../site.config";
 export default function Sidebar() {
   return (
     <div className="relative w-60">
-      <div className="bg-softGray fixed top-0 h-full border-r border-gray-300">
+      <div className="bg-softGray flex flex-col fixed top-0 h-full border-r border-gray-300">
         <div className="flex items-center font-bold text-md text-gray-700 mb-10 py-4 px-8">
           <img
             src="/hn-logo.png"
@@ -19,7 +19,7 @@ export default function Sidebar() {
         </div>
         <div className="mb-10">
           <h1 className="sidemenu-title">Category</h1>
-          <ul>
+          <ul className="mt-4">
             {site.tabs.map((tab) => (
               <li>
                 <Link href={tab.href}>
@@ -29,17 +29,19 @@ export default function Sidebar() {
                 </Link>
               </li>
             ))}
-            <li className="sidemenu-item cursor-auto">
-              <a
-                href="https://rocktimsiakia.now.sh"
-                className="text-blue-500 mr-1"
-              >
-                Rocktim Saikia{" "}
-              </a>{" "}
-              © 2020
-            </li>
           </ul>
         </div>
+        <ul className="mt-auto py-4">
+          <li className="non-sidemenu-item">
+            <a
+              href="https://rocktimsiakia.now.sh"
+              className="text-blue-500 mr-1"
+            >
+              Rocktim Saikia{" "}
+            </a>{" "}
+            © 2020
+          </li>
+        </ul>
       </div>
     </div>
   );

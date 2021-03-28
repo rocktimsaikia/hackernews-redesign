@@ -40,6 +40,10 @@ a {
     @apply hover:bg-gray-300 hover:text-gray-900;
   }
 
+  .non-sidemenu-item {
+    @apply py-4 flex px-8 items-center font-medium text-sm text-gray-500;
+  }
+
   .sidemenu-title {
     @apply uppercase text-sm pb-2 font-medium text-gray-500 border-b border-gray-300 px-8;
   }
