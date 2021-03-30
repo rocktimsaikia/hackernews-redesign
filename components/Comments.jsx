@@ -4,9 +4,9 @@ import * as timeago from "timeago.js";
 export default function Comments({ comments }) {
   return (
     <div>
-      {comments.map((comment) => (
-        <ul>
-          <li className="my-6 font-inter">
+      <ul>
+        {comments.map((comment, i) => (
+          <li className="my-6 font-inter" key={i}>
             <div>
               <span className="text-gray-800 text-sm font-bold mr-4 mb-2 inline-block">
                 {comment.author}
@@ -20,8 +20,8 @@ export default function Comments({ comments }) {
               dangerouslySetInnerHTML={{ __html: comment.text }}
             ></p>
           </li>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </div>
   );
 }

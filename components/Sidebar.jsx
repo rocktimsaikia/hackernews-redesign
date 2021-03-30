@@ -2,15 +2,14 @@ import React from "react";
 import Link from "next/link";
 import site from "../site.config";
 
-export default function Sidebar() {
+function Sidebar() {
   return (
     <div className="relative w-60">
       <div className="bg-softGray flex flex-col fixed top-0 h-full border-r border-gray-300">
         <div className="flex items-center font-bold text-md text-gray-700 mb-10 py-4 px-8">
           <img
             src="/hn-logo.png"
-            alt=""
-            srcset=""
+            alt="Hackernews logo"
             height="30px"
             width="30px"
             className="mr-2 -ml-1"
@@ -20,8 +19,8 @@ export default function Sidebar() {
         <div className="mb-10">
           <h1 className="sidemenu-title">Category</h1>
           <ul className="mt-4">
-            {site.tabs.map((tab) => (
-              <li>
+            {site.tabs.map((tab, i) => (
+              <li key={i}>
                 <Link href={tab.href}>
                   <a className="sidemenu-item">
                     {tab.icon} {tab.title}
@@ -46,3 +45,5 @@ export default function Sidebar() {
     </div>
   );
 }
+
+export default React.memo(Sidebar);
