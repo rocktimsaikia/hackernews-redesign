@@ -19,6 +19,12 @@ a {
   box-sizing: border-box;
 }
 
+@layer base {
+  button {
+    @apply outline-none focus:outline-none;
+  }
+}
+
 @layer utilities {
   .main-title {
     @apply font-semibold text-xl my-10 text-gray-800;
@@ -41,11 +47,17 @@ a {
 
   .more-btn {
     @apply bg-transparent border border-solid bg-gray-500 text-white font-bold uppercase text-xs  mt-5 
-    px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150;
+    px-4 py-2 rounded mr-1 mb-1 ease-linear transition-all duration-150;
   }
 
   .comments-container {
     width: 40rem;
+  }
+  .comments-paragraph {
+    @apply text-sm text-gray-600 font-normal tracking-tight;
+  }
+  .comments-paragraph a {
+    color: #338bf1;
   }
 
   .comments-container pre {
