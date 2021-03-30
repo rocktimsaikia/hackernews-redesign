@@ -8,13 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "epoch-timeago": "^1.1.9",
     "next": "10.0.9",
-    "p-iteration": "^1.1.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "swr": "^0.5.4"
+    "swr": "^0.5.4",
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",

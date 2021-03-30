@@ -1,10 +1,6 @@
-export default async (req, res) => {
-  const data = await fetch('https://hn-api.glitch.me/api/newstories', {
-    headers: {
-      Authorization: 'D7x1tecF8l1LIOcVz18VMwKR4ozyUobo'
-    }
-  });
-  const stories = await data.json();
+import getStories from "../../lib/getStories";
 
-  res.send(stories);
+export default async (req, res) => {
+  const data = await getStories("newstories");
+  res.send(data);
 };

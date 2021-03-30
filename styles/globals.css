@@ -35,6 +35,14 @@ a {
     @apply transition transform duration-500 ease-in-out hover:shadow-md hover:-translate-y-1 hover:scale-105;
   }
 
+  .comments-container {
+    width: 40rem;
+  }
+
+  .comments-container pre {
+    @apply whitespace-pre-wrap;
+  }
+
   .sidemenu-item {
     @apply py-4 flex px-8 items-center font-medium text-sm text-gray-500 cursor-pointer;
     @apply hover:bg-gray-300 hover:text-gray-900;

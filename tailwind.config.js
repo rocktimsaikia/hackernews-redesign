@@ -7,6 +7,9 @@ module.exports = {
       softGray: "#F6FAFD",
     }),
     extend: {},
+    fontFamily: {
+      inter: ["Inter", "system-ui"],
+    },
   },
   variants: {
     extend: {

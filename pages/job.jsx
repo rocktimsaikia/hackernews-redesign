@@ -1,21 +1,19 @@
-import useSWR from "swr";
-import fetcher from "../lib/fetcher";
+import useFetched from "../lib/useFetched";
+import getStories from "../lib/getStories";
 import Stories from "../components/Stories";
 
 export async function getStaticProps() {
-  const posts = await fetcher("/api/jobstories");
-  return { props: { posts } };
+  const data = await getStories("jobstories");
+  return { props: { data } };
 }
 
-export default function Best({posts}) {
-  const { data, error } = useSWR("/api/jobstories", fetcher, {
-    initialData: posts,
-  });
+export default function Job({ posts }) {
+  const { data, isPending } = useFetched("/api/jobstories", posts);
 
   return (
     <div className="container grid justify-center my-5">
       <h1 className="main-title">Job Stories</h1>
-      {!error && <Stories stories={data} />}
+      {!isPending ? <Stories stories={data} /> : null}
     </div>
   );
 }
