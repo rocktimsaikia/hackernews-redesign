@@ -1,6 +1,5 @@
-import useFetched from "../lib/useFetched";
 import getStories from "../lib/getStories";
-import Stories from "../components/Stories";
+import Page from "../components/Page";
 
 export async function getStaticProps() {
   const posts = await getStories("jobstories");
@@ -8,12 +7,10 @@ export async function getStaticProps() {
 }
 
 export default function Job({ posts }) {
-  const { data, isPending } = useFetched("/api/jobstories", posts);
-
   return (
     <div className="container grid justify-center my-5">
       <h1 className="main-title">Job Stories</h1>
-      {!isPending ? <Stories stories={data} /> : null}
+      {!isPending ? <Page initialData={posts} /> : null}
     </div>
   );
 }
