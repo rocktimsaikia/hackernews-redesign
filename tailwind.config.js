@@ -15,6 +15,7 @@ module.exports = {
     extend: {
       zIndex: ["hover", "active"],
       borderWidth: ["last"],
+      backgroundColor: ["active"],
     },
   },
   plugins: [],

@@ -1,8 +1,9 @@
-import ChatIcon from "../components/icons/chat";
+import React from "react";
 import Link from "next/link";
+import ChatIcon from "../components/icons/chat";
 
-export default function Show({ stories }) {
-  return stories.map((story, i) => (
+export default function Story({ story }) {
+  return (
     <Link href={`/items/${story.id}`}>
       <div
         href={story.link}
@@ -45,5 +46,5 @@ export default function Show({ stories }) {
         </div>
       </div>
     </Link>
-  ));
+  );
 }
