@@ -3,8 +3,8 @@ import getStories from "../lib/getStories";
 import Stories from "../components/Stories";
 
 export async function getStaticProps() {
-  const data = await getStories("newstories");
-  return { props: { data } };
+  const posts = await getStories("newstories");
+  return { props: { posts } };
 }
 
 export default function New({ posts }) {
