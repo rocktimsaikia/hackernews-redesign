@@ -2,11 +2,13 @@ import useFetched from "../../lib/useFetched";
 import { useRouter } from "next/router";
 import Comments from "../../components/Comments";
 import ChatIcon from "../../components/icons/chat";
-import * as timeago from "timeago.js";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 
 export default function Best() {
   const { pid } = useRouter().query;
   const { data, isPending } = useFetched(`/api/comments/${pid}`);
+  dayjs.extend(localizedFormat);
 
   return (
     <div className="container grid justify-center my-5">
@@ -18,7 +20,7 @@ export default function Best() {
               by <span className="text-red-500 font-medium">{data.author}</span>
             </p>
             <p className="text-xs text-gray-500 mr-4">
-              {timeago.format(data.created_at)}
+              {dayjs(data.created_at).format("MMM D, h:mm A")}
             </p>
             <figure className="flex items-start">
               <ChatIcon />

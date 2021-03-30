@@ -1,7 +1,9 @@
 import React from "react";
-import * as timeago from "timeago.js";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 
 export default function Comments({ comments }) {
+  dayjs.extend(localizedFormat);
   return (
     <div>
       <ul>
@@ -12,11 +14,11 @@ export default function Comments({ comments }) {
                 {comment.author}
               </span>
               <span className="text-gray-500 text-xs">
-                {timeago.format(comment.created_at)}
+                {dayjs(comment.created_at).format("MMM D, h:mm A")}
               </span>
             </div>
             <p
-              className="text-sm text-gray-800 font-normal tracking-wide"
+              className="text-sm text-gray-800 font-normal tracking-tight"
               dangerouslySetInnerHTML={{ __html: comment.text }}
             ></p>
           </li>
