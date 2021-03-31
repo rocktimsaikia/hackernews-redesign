@@ -20,6 +20,10 @@ a {
 }
 
 @layer base {
+  body {
+    @apply bg-gray-100;
+  }
+
   button {
     @apply outline-none focus:outline-none;
   }
@@ -37,12 +41,8 @@ a {
     -webkit-font-smoothing: antialiased;
     -webkit-font-smoothing: subpixel-antialiased;
     backface-visibility: hidden;
-    @apply border border-b-0 bg-white border-gray-300 py-8 flex flex-row items-center divide-x rounded cursor-pointer;
+    @apply mb-4 shadow-sm bg-white py-8 flex flex-row items-center divide-x rounded cursor-pointer;
     @apply transition transform duration-500 ease-in-out hover:shadow-md hover:-translate-y-1 hover:scale-105;
-  }
-
-  .news-card:last-of-type {
-    @apply border-b;
   }
 
   .more-btn {
@@ -65,7 +65,7 @@ a {
   }
 
   .sidemenu-item {
-    @apply py-4 flex px-8 items-center font-medium text-sm text-gray-500 cursor-pointer;
+    @apply py-4 flex px-8 items-center font-medium text-base text-gray-400 cursor-pointer;
     @apply hover:bg-gray-300 hover:text-gray-900;
   }
 
@@ -74,7 +74,7 @@ a {
   }
 
   .sidemenu-title {
-    @apply uppercase text-sm pb-2 font-medium text-gray-500 border-b border-gray-300 px-8;
+    @apply uppercase text-sm pb-2 font-medium text-gray-500 px-8;
   }
 
   .sidemenu-item:hover .sidemenu-icon {

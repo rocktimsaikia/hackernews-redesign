@@ -1,16 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import ChatIcon from "../components/icons/chat";
+import TimerIcon from "../components/icons/timer";
 
 export default function Story({ story }) {
+  const getHost = (url) => {
+    url = new URL(url);
+    return url.hostname;
+  };
+
   return (
     <Link href={`/items/${story.id}`}>
-      <div
-        href={story.link}
-        target="_blank"
-        className={`news-card flex flex-row`}
-      >
-        <div className="px-5 flex flex-col justify-center text-center w-16">
+      <div className="news-card flex flex-row font-inter">
+        <div className="px-5 flex flex-col justify-center text-center w-20">
           <svg
             height="18"
             aria-hidden="true"
@@ -35,7 +37,10 @@ export default function Story({ story }) {
             <p className="text-xs mr-4 text-gray-500">
               by <span className="text-red-500 font-medium">{story.user}</span>
             </p>
-            <p className="text-xs text-gray-500 mr-4">{story.time}</p>
+            <p className="text-xs text-gray-500 mr-4"> {story.time}</p>
+            <p className="text-xs text-gray-500 mr-4">
+              {getHost(story.source)}
+            </p>
             <figure className="flex items-start">
               <ChatIcon />
               <figcaption className="text-xs text-gray-500">
