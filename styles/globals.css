@@ -54,7 +54,7 @@ a {
     width: 40rem;
   }
   .comments-paragraph {
-    @apply text-sm text-gray-600 font-normal tracking-tight;
+    @apply text-sm text-gray-800 font-normal tracking-tight;
   }
   .comments-paragraph a {
     color: #338bf1;
