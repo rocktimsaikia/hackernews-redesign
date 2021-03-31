@@ -10,7 +10,7 @@ export default function Job({ posts }) {
   return (
     <div className="container grid justify-center my-5">
       <h1 className="main-title">Job Stories</h1>
-      {!isPending ? <Page initialData={posts} /> : null}
+      {!isPending ? <Page initialData={posts} category="jobstories" /> : null}
     </div>
   );
 }

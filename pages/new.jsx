@@ -13,7 +13,12 @@ export default function New({ posts }) {
 
   for (let i = 0; i < pageCount; i++) {
     pages.push(
-      <Page page={i + 1} initialData={i + 1 !== 1 ? null : posts} key={i} />
+      <Page
+        page={i + 1}
+        category="newstories"
+        initialData={i + 1 !== 1 ? null : posts}
+        key={i}
+      />
     );
   }
 

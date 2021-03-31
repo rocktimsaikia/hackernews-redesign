@@ -1,9 +1,9 @@
 import Story from "./Story";
 import useFetched from "../lib/useFetched";
 
-export default function Show({ initialData, page }) {
+export default function Show({ initialData, page, category }) {
   const { data: stories, isPending } = useFetched(
-    `api/frontstories?page=${page}`,
+    `api/${category}?page=${page}`,
     initialData
   );
 
@@ -11,5 +11,11 @@ export default function Show({ initialData, page }) {
     return <h1>Loading...</h1>;
   }
 
-  return stories.map((story, i) => <Story story={story} key={i} />);
+  return (
+    <div className="mt-4">
+      {stories.map((story, i) => (
+        <Story story={story} key={i} />
+      ))}
+    </div>
+  );
 }
