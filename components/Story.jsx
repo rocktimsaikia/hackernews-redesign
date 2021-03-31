@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import ChatIcon from "../components/icons/chat";
-import TimerIcon from "../components/icons/timer";
 
 export default function Story({ story }) {
   const getHost = (url) => {

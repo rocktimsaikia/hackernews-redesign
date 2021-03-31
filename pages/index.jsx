@@ -18,7 +18,7 @@ export default function Home({ posts }) {
   }
 
   return (
-    <div className="container grid justify-center my-5">
+    <div className="container grid justify-center">
       <h1 className="main-title">Top Stories</h1>
       {pages}
       <button className="more-btn" onClick={() => setpageCount(pageCount + 1)}>

@@ -1,15 +1,15 @@
-import CollectionIcon from "./components/icons/collection";
-import TimerIcon from "./components/icons/timer";
-import QuestionIcon from "./components/icons/question";
-import DesktopIcon from "./components/icons/desktop";
+import BubbleIcon from "./components/icons/bubble";
 import BriefcaseIcon from "./components/icons/briefcase";
+import FireIcon from "./components/icons/fire";
+import NewspaperIcon from "./components/icons/newspaper";
+import SparklesIcon from "./components/icons/sparkles";
 
 const site = {
   tabs: [
-    { title: "Top", href: "/", icon: <CollectionIcon /> },
-    { title: "New", href: "/new", icon: <TimerIcon /> },
-    { title: "Ask", href: "/ask", icon: <QuestionIcon /> },
-    { title: "Show", href: "/show", icon: <DesktopIcon /> },
+    { title: "Top", href: "/", icon: <FireIcon /> },
+    { title: "New", href: "/new", icon: <NewspaperIcon /> },
+    { title: "Ask", href: "/ask", icon: <BubbleIcon /> },
+    { title: "Show", href: "/show", icon: <SparklesIcon /> },
     { title: "Job", href: "/job", icon: <BriefcaseIcon /> },
   ],
 };

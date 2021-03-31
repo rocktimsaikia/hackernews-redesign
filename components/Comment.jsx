@@ -1,9 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import * as timeago from "timeago.js";
 import ReplyIcon from "./icons/reply";
 
 export default function Comment({ comment }) {
-  const [showReplies, setShowReplies] = React.useState(false);
+  const [showReplies, setShowReplies] = useState(false);
 
   return (
     <li className="my-6 font-inter">

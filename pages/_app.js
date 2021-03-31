@@ -1,11 +1,16 @@
 import "../styles/globals.css";
 import Sidebar from "../components/Sidebar";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="flex flex-row">
-      <Sidebar />
-      <Component {...pageProps} />
+    <div>
+      <div className="flex flex-row">
+        <Sidebar />
+        <Component {...pageProps} />
+      </div>
+
+      <Footer />
     </div>
   );
 }
