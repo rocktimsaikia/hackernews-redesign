@@ -3,7 +3,8 @@ import Link from "next/link";
 import ChatIcon from "../components/icons/chat";
 
 export default function Story({ story }) {
-  const getHost = (url) => {
+  const getHost = (url, id) => {
+    url = !url ? `https://news.ycombinator.com/item?id=${id}` : url;
     url = new URL(url);
     return url.hostname;
   };
@@ -38,7 +39,7 @@ export default function Story({ story }) {
             </p>
             <p className="text-xs text-gray-500 mr-4"> {story.time}</p>
             <p className="text-xs text-gray-500 mr-4">
-              {getHost(story.source)}
+              {getHost(story.source, story.id)}
             </p>
             <figure className="flex items-start">
               <ChatIcon />

@@ -11,7 +11,8 @@ export default function Best() {
   const { data, isPending } = useFetched(`/api/comments/${pid}`);
   dayjs.extend(localizedFormat);
 
-  const getHost = (url) => {
+  const getHost = (url, id) => {
+    url = !url ? `https://news.ycombinator.com/item?id=${id}` : url;
     url = new URL(url);
     return url.hostname;
   };
@@ -23,7 +24,11 @@ export default function Best() {
           <div className="shadow p-4 bg-white rounded-sm text-center">
             <a
               className="font-extrabold text-xl underline"
-              href={data.url}
+              href={
+                !data.url
+                  ? `https://news.ycombinator.com/item?id=${data.id}`
+                  : data.url
+              }
               target="_blank"
             >
               {data.title}

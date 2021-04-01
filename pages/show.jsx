@@ -1,6 +1,7 @@
 import { useState } from "react";
 import getStories from "../lib/getStories";
 import Page from "../components/Page";
+import SparklesIcon from "../components/icons/sparkles";
 
 export async function getStaticProps() {
   const posts = await getStories("showstories");
@@ -23,8 +24,10 @@ export default function Show({ posts }) {
   }
 
   return (
-    <div className="container grid justify-center my-5">
-      <h1 className="main-title">Show Stories</h1>
+    <div className="container grid justify-center">
+      <h1 className="main-title flex items-center">
+        <SparklesIcon /> Show Stories
+      </h1>
       {pages}
       <button className="more-btn" onClick={() => setpageCount(pageCount + 1)}>
         Load more

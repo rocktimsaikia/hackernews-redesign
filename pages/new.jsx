@@ -1,6 +1,7 @@
 import { useState } from "react";
 import getStories from "../lib/getStories";
 import Page from "../components/Page";
+import NewspaperIcon from "../components/icons/newspaper";
 
 export async function getStaticProps() {
   const posts = await getStories("newstories");
@@ -23,8 +24,10 @@ export default function New({ posts }) {
   }
 
   return (
-    <div className="container grid justify-center my-5">
-      <h1 className="main-title">New Stories</h1>
+    <div className="container grid justify-center">
+      <h1 className="main-title flex items-center">
+        <NewspaperIcon /> New Stories
+      </h1>
       {pages}
       <button className="more-btn" onClick={() => setpageCount(pageCount + 1)}>
         Load more
