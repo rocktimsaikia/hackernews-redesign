@@ -24,7 +24,7 @@ export default function Home({ posts }) {
   }
 
   return (
-    <div className="container grid justify-center">
+    <div className="col-span-2 mt-8">
       <h1 className="main-title flex items-center">
         <FireIcon /> Top Stories
       </h1>

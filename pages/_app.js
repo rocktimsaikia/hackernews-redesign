@@ -5,11 +5,10 @@ import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <div className="flex flex-row">
+      <div className="grid grid-cols-3">
         <Sidebar />
         <Component {...pageProps} />
       </div>
-
       <Footer />
     </div>
   );
