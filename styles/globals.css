@@ -84,4 +84,16 @@ a {
   .sidemenu-icon {
     @apply w-5 h-5 mr-4 stroke-current text-gray-500 inline-block;
   }
+
+  .fancy-undeline {
+    background-image: linear-gradient(120deg, #ec008c, #fc6767 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.3em;
+    background-position: 0 100%;
+    transition: background-size 0.25s ease-in;
+  }
+
+  .fancy-undeline:hover {
+    background-size: 100% 88% !important;
+  }
 }

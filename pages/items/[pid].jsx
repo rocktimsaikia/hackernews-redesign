@@ -21,9 +21,9 @@ export default function Best() {
     <div className="container grid justify-center my-10">
       {!isPending ? (
         <div className="comments-container">
-          <div className="shadow p-4 bg-white rounded-sm text-center">
+          <div className="border-dotted border-2 py-5 border-gray-500 rounded-sm text-center">
             <a
-              className="font-extrabold text-xl underline"
+              className="font-extrabold text-xl fancy-undeline"
               href={
                 !data.url
                   ? `https://news.ycombinator.com/item?id=${data.id}`
