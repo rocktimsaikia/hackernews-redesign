@@ -9,6 +9,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       inter: ["Inter", "system-ui"],
+      prompt: ["Prompt", "system-ui"],
     },
   },
   variants: {

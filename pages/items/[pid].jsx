@@ -21,7 +21,7 @@ export default function Best() {
     <div className="container grid justify-center my-10">
       {!isPending ? (
         <div className="comments-container">
-          <div className="border-dotted border-2 py-5 border-gray-500 rounded-sm text-center">
+          <div>
             <a
               className="font-extrabold text-xl fancy-undeline"
               href={
@@ -33,7 +33,7 @@ export default function Best() {
             >
               {data.title}
             </a>
-            <div className="flex mt-2 justify-center">
+            <div className="flex mt-2">
               <p className="text-xs mr-4 text-gray-500">
                 by{" "}
                 <span className="text-red-500 font-medium">{data.author}</span>

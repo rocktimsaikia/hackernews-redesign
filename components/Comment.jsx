@@ -28,7 +28,7 @@ export default function Comment({ comment }) {
         </button>
       )}
       {showReplies && (
-        <div className="pl-4 border-l-2">
+        <div className="pl-4 border-l-2 border-gray-400">
           {comment.children.map((reply) => (
             <Comment comment={reply} />
           ))}

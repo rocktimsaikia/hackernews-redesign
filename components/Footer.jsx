@@ -1,17 +1,15 @@
 import React from "react";
-import ZapIcon from "../components/icons/zap";
 
 export default function Footer() {
   return (
-    <footer className="text-center font-inter text-sm text-gray-800 font-normal my-5">
-      <p>
-        Made by <ZapIcon />
+    <footer className="text-center my-10">
+      <p className="footer-text font-prompt">
+        Designed and Built by{" "}
         <a
-          className="text-blue-600"
-          href="http://rocktimsaikia.now.sh"
-          target="_blank"
+          className="underline font-semibold text-red-500"
+          href="https://github.com/rocktimsaikia"
         >
-          Rocktim
+          @rocktimsaikia
         </a>
       </p>
     </footer>

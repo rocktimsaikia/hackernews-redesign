@@ -1,7 +1,6 @@
 import { useState } from "react";
 import getStories from "../lib/getStories";
 import Page from "../components/Page";
-import FireIcon from "../components/icons/fire";
 
 export async function getStaticProps() {
   const posts = await getStories("frontstories");
@@ -25,9 +24,9 @@ export default function Home({ posts }) {
 
   return (
     <div className="col-span-2 mt-8">
-      <h1 className="main-title flex items-center">
-        <FireIcon /> Top Stories
-      </h1>
+      <span className="main-title flex items-center text-soft-black">
+        <h1 className="fancy-undeline">Top stories</h1>
+      </span>
       {pages}
       <button className="more-btn" onClick={() => setpageCount(pageCount + 1)}>
         Load more

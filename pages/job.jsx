@@ -1,6 +1,5 @@
 import getStories from "../lib/getStories";
 import Page from "../components/Page";
-import BriefcaseIcon from "../components/icons/briefcase";
 
 export async function getStaticProps() {
   const posts = await getStories("jobstories");
@@ -9,10 +8,10 @@ export async function getStaticProps() {
 
 export default function Job({ posts }) {
   return (
-    <div className="container grid justify-center">
-      <h1 className="main-title flex items-center">
-        <BriefcaseIcon /> Job Stories
-      </h1>
+    <div className="col-span-2 mt-8">
+      <span className="main-title flex items-center text-soft-black">
+        <h1 className="fancy-undeline">Job stories</h1>
+      </span>
       <Page initialData={posts} category="jobstories" />
     </div>
   );
