@@ -1,12 +1,24 @@
 import { useState } from "react";
 import * as timeago from "timeago.js";
 import ReplyIcon from "./icons/reply";
+import { motion } from "framer-motion";
+
+const item = {
+  hidden: { y: 10, opacity: 0 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 export default function Comment({ comment }) {
   const [showReplies, setShowReplies] = useState(false);
 
   return (
-    <li className="my-6 font-inter">
+    <motion.li className="my-6 font-inter" variants={item}>
       <div>
         <span className="text-gray-800 text-xs font-bold mr-4 mb-2 inline-block">
           {comment.author}
@@ -34,6 +46,6 @@ export default function Comment({ comment }) {
           ))}
         </div>
       )}
-    </li>
+    </motion.li>
   );
 }

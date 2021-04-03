@@ -5,7 +5,7 @@ function Icon() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       ariaHidden="true"
-      className="svg-inline--fa fa-github fa-w-16 fill-current text-gray-500 w-5 h-5"
+      className="svg-inline--fa fa-github fa-w-16 fill-current text-gray-500 w-5 h-5 hover:text-gray-700"
       data-icon="github"
       data-prefix="fab"
       viewBox="0 0 496 512"
