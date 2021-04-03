@@ -1,5 +1,6 @@
-import useFetched from "../../lib/useFetched";
 import { useRouter } from "next/router";
+import Head from "next/head";
+import useFetched from "../../lib/useFetched";
 import Comments from "../../components/Comments";
 import ChatIcon from "../../components/icons/chat";
 import GlobeIcon from "../../components/icons/globe";
@@ -21,6 +22,9 @@ export default function Best() {
     <div className="container grid justify-center my-10">
       {!isPending ? (
         <div className="comments-container">
+          <Head>
+            <title>Hackernews Redesign - {data.title}</title>
+          </Head>
           <div>
             <a
               className="font-extrabold text-xl fancy-undeline"

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Head from "next/head";
 import getStories from "../lib/getStories";
 import Page from "../components/Page";
 
@@ -23,14 +24,26 @@ export default function Home({ posts }) {
   }
 
   return (
-    <div className="col-span-2 mt-8">
-      <span className="main-title flex items-center text-soft-black">
-        <h1 className="fancy-undeline">Top stories</h1>
-      </span>
-      {pages}
-      <button className="more-btn" onClick={() => setpageCount(pageCount + 1)}>
-        Load more
-      </button>
-    </div>
+    <>
+      <Head>
+        <title>Hackernews Redesign - A HN client built on top of Next.js</title>
+        <meta
+          property="og:image"
+          content="https://hackernews.vercel.app/hn-redesign.jpeg"
+        />
+      </Head>
+      <div className="col-span-2 mt-8">
+        <span className="main-title flex items-center text-soft-black">
+          <h1 className="fancy-undeline">Top stories</h1>
+        </span>
+        {pages}
+        <button
+          className="more-btn"
+          onClick={() => setpageCount(pageCount + 1)}
+        >
+          Load more
+        </button>
+      </div>
+    </>
   );
 }
