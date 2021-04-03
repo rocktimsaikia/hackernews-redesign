@@ -21,7 +21,7 @@ export default function Best() {
   return (
     <div className="container grid justify-center my-10">
       {!isPending ? (
-        <div className="comments-container">
+        <div className="w-full lg:w-140">
           <Head>
             <title>Hackernews Redesign - {data.title}</title>
           </Head>

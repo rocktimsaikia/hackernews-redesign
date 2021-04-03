@@ -28,7 +28,7 @@ export default function New({ posts }) {
       <Head>
         <title>Hackernews Redesign - New stories</title>
       </Head>
-      <div className="col-span-2 mt-8">
+      <div className="lg:col-span-2 mt-8">
         <span className="main-title flex items-center text-soft-black">
           <h1 className="fancy-undeline">New stories</h1>
         </span>

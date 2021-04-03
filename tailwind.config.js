@@ -6,7 +6,11 @@ module.exports = {
       ...theme("colors"),
       softGray: "#F6FAFD",
     }),
-    extend: {},
+    extend: {
+      spacing: {
+        140: "40rem",
+      },
+    },
     fontFamily: {
       inter: ["Inter", "system-ui"],
       prompt: ["Prompt", "system-ui"],

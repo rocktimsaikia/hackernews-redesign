@@ -13,7 +13,7 @@ export default function Job({ posts }) {
       <Head>
         <title>Hackernews Redesign - Job stories</title>
       </Head>
-      <div className="col-span-2 mt-8">
+      <div className="lg:col-span-2 mt-8">
         <span className="main-title flex items-center text-soft-black">
           <h1 className="fancy-undeline">Job stories</h1>
         </span>

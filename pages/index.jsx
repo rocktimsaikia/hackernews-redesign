@@ -32,7 +32,7 @@ export default function Home({ posts }) {
           content="https://hackernews.vercel.app/hn-redesign.jpeg"
         />
       </Head>
-      <div className="col-span-2 mt-8">
+      <div className="lg:col-span-2 mt-8">
         <span className="main-title flex items-center text-soft-black">
           <h1 className="fancy-undeline">Top stories</h1>
         </span>
