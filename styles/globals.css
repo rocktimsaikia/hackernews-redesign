@@ -4,7 +4,6 @@
 
 html,
 body {
-  background-color: #f4f4f4;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -69,16 +68,16 @@ a {
   }
 
   .sidemenu-item {
-    @apply py-2 flex items-center font-medium text-base text-gray-500 cursor-pointer my-5;
+    @apply py-2 flex items-center font-medium text-base text-gray-600 cursor-pointer my-5;
     @apply hover:text-gray-900;
   }
 
   .non-sidemenu-item {
-    @apply py-4 flex px-8 items-center font-medium text-sm text-gray-500;
+    @apply py-4 flex px-8 items-center font-medium text-sm text-gray-600;
   }
 
   .sidemenu-title {
-    @apply uppercase text-sm pb-2 font-medium text-gray-500 px-8;
+    @apply uppercase text-sm pb-2 font-medium text-gray-600 px-8;
   }
 
   .sidemenu-item:hover .sidemenu-icon {
@@ -86,7 +85,7 @@ a {
   }
 
   .sidemenu-icon {
-    @apply w-5 h-5 mr-4 stroke-current text-gray-500 inline-block;
+    @apply w-5 h-5 mr-4 stroke-current text-gray-600 inline-block;
   }
 
   .fancy-undeline {
@@ -104,5 +103,16 @@ a {
   .footer-text {
     @apply text-xs;
     color: #555555;
+  }
+
+  .bg-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    background-color: #f4f4f4;
+    opacity: 0.3;
+    background-image: radial-gradient(#444cf7 1px, #e5e5f7 1px);
+    background-size: 20px 20px;
   }
 }
