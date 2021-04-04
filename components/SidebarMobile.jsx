@@ -1,11 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import site from "../site.config";
+import useOnClickOutside from "use-onclickoutside";
 
-function Sidebar() {
+function Sidebar({ closeMenu }) {
+  const ref = React.useRef(null);
+  useOnClickOutside(ref, closeMenu);
+
   return (
-    <div className="hidden lg:flex flex-col items-center">
-      <div className="fixed h-full flex z-10">
+    <div className="lg:hidden flex flex-col items-center0">
+      <div
+        className="fixed top-0 left-0 shadow-xl h-full flex bg-white z-10"
+        ref={ref}
+      >
         <div className="flex items-center px-8">
           <ul>
             {site.tabs.map((tab, i) => (

@@ -13,8 +13,10 @@
     "next": "10.0.9",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-responsive": "^8.2.0",
     "swr": "^0.5.4",
-    "timeago.js": "^4.0.2"
+    "timeago.js": "^4.0.2",
+    "use-onclickoutside": "^0.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
