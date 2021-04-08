@@ -1,7 +1,7 @@
 ## :rocket: Hackernews Redesign v2 ![Vercel](https://vercelbadge.vercel.app/api/rocktimsaikia/hackernews-redesign)
 
 > A minimal looking hackernews client built with Next.js and TailwindCSS. <br/>
-> This is v2 of the [**originl redesign**](https://github.com/RocktimSaikia/hacker-news-redesign/tree/master) that I did 2 years ago.
+> This is v2 of the [**original redesign**](https://github.com/RocktimSaikia/hacker-news-redesign/tree/master) that I did 2 years ago.
 
 <br/>
 
