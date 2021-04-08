@@ -20,7 +20,7 @@
 
 ## :zap: About
 
-I originally did a HN redesign 2 years ago (check out [**Hackernews Redesign v1**](https://github.com/RocktimSaikia/hacker-news-redesign/tree/master)) which was my first react project. But recently I thought of redesigning the same application with Next.js. So I did. .
+I originally did a HN redesign 2 years ago ([**Hackernews Redesign v1**](https://github.com/RocktimSaikia/hacker-news-redesign/tree/master)) which was my first react project. But recently I thought of redesigning the same application with Next.js. So I did. .
 
 I am not using the official HN API because it is very poorly designed which makes it very slow and not practical. I built a [**custom HN api**](https://hn-apiv0.herokuapp.com/) only for this application. And to get the comments of a post, I am using [**Alogia's hn API**](https://hn.algolia.com/api).
 
