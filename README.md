@@ -1,6 +1,6 @@
 ## :rocket: Hackernews Redesign v2
 
-> A minimal looking hackernews client built with Next.js and TailwindCSS. :rocket:
+> A minimal looking hackernews client built with Next.js and TailwindCSS.
 
 <br/>
 
