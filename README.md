@@ -1,4 +1,4 @@
-# Hackernews Redesign v2
+## :rocket: Hackernews Redesign v2
 
 > A minimal looking hackernews client built with Next.js and TailwindCSS. :rocket: <br/>
 
