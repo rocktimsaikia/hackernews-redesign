@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import ChatIcon from "../components/icons/chat";
+import UpIcon from "../components/icons/up";
+import ThumbsUp from "../components/icons/thumbsup";
 
 export default function Story({ story }) {
   const getHost = (url, id) => {
@@ -12,41 +14,31 @@ export default function Story({ story }) {
   return (
     <Link href={`/items/${story.id}`}>
       <div className="news-card flex flex-row font-inter">
-        <div className="px-5 flex flex-col justify-center text-center w-20">
-          <svg
-            height="18"
-            aria-hidden="true"
-            focusable="false"
-            data-prefix="fas"
-            data-icon="sort-up"
-            className="svg-inline--fa fa-sort-up fa-w-10"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 320 512"
-          >
-            <path
-              fill="#B2B1B1"
-              d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"
-            ></path>
-          </svg>
+        <div className="px-5 hidden lg:flex flex-col justify-center text-center w-20">
+          <UpIcon />
           <p className="text-gray-600 text-xs font-medium">{story.score}</p>
         </div>
         <div className="px-5">
           <h2 className="font-medium text-sm text-soft-black">{story.title}</h2>
           <div className="flex mt-2">
-            <p className="text-xs mr-4 text-gray-600">
+            <p className="hidden lg:inline-block text-xs mr-4 text-gray-600">
               by <span className="text-red-500 font-medium">{story.user}</span>
             </p>
             <p className="text-xs text-gray-600 mr-4"> {story.time}</p>
-            <p className="text-xs text-gray-600 mr-4">
+            <p className="text-xs hidden lg:inline-block text-gray-600 mr-4">
               {getHost(story.source, story.id)}
             </p>
-            <figure className="flex items-start">
+            <figure className="flex items-start mr-4">
               <ChatIcon />
               <figcaption className="text-xs text-gray-600">
                 {story.comment_count}
               </figcaption>
             </figure>
+
+            <div className="lg:hidden flex items-start">
+              <ThumbsUp />
+              <p className="text-xs text-gray-600">{story.score}</p>
+            </div>
           </div>
         </div>
       </div>
