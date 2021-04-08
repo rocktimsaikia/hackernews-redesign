@@ -6,10 +6,11 @@ import ChatIcon from "../../components/icons/chat";
 import GlobeIcon from "../../components/icons/globe";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+// import getComments from "../../lib/getComments";
 
 export default function Best() {
-  const { pid } = useRouter().query;
-  const { data, isPending } = useFetched(`/api/comments/${pid}`);
+  const { id } = useRouter().query;
+  const { data, isPending } = useFetched(`/api/comments/${id}`);
   dayjs.extend(localizedFormat);
 
   const getHost = (url, id) => {
@@ -59,7 +60,7 @@ export default function Best() {
           <Comments comments={data.children} />
         </div>
       ) : (
-        <div>Loading...</div>
+        "Loading..."
       )}
     </div>
   );
