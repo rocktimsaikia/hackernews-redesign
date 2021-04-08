@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hackernews Redesign v2
 
-## Getting Started
+> A minimal looking hackernews client built with Next.js and TailwindCSS. :rocket: <br/>
 
-First, run the development server:
+<br/>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<div align="center" margin-bottom="0">
+  <a href="https://hackernews-redesign.netlify.com" target="_blank">
+    <img alt="Hacker News Clone Demo" width="auto" height="auto" src="https://i.ibb.co/S7VNsGN/screely-1617856041421.png">
+  </a>
+</div>
+<br/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## :sparkles: Techstack
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- [**Next.js**](https://nextjs.org/) - Framework
+- [**TailwindCSS**](https://tailwindcss.com/) - Styling
+- [**Framer motion**](https://www.framer.com/) - Animation
+- [**SWR**](https://swr.vercel.app/) - Data fetching
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## :zap: About
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+I originally did a HN redesign 2 years ago (check out [**this branch**](https://github.com/RocktimSaikia/hacker-news-redesign/tree/master)) which was my first react project. But recently I thought of redesigning the same application with Next.js. So I did. .
 
-## Learn More
+I am not using the official HN API because it is very poorly designed which makes it very slow and not practical. I built a [**custom HN api**](https://hn-apiv0.herokuapp.com/) only for this application. And to get the comments of a post, I am using [**Alogia's hn API**](https://hn.algolia.com/api).
 
-To learn more about Next.js, take a look at the following resources:
+## Support
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can support me and my work right here :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<a href="https://www.buymeacoffee.com/7BdaxfI"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" height="40px"/></a>
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+MIT 2021 © [Rocktim Saikia](https://rocktimsaikia.now.sh)
