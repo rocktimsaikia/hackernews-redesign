@@ -1,4 +1,4 @@
-## :rocket: [Hackernews Redesign v2](https://hn-redesign.vercel.app)
+## :rocket: Hackernews Redesign v2
 
 > A minimal looking hackernews client built with Next.js and TailwindCSS.
 
