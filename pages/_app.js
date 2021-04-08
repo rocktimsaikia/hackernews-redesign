@@ -28,9 +28,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className="relative flex flex-col">
       <div className="bg-overlay" />
-      <div className="relative mx-6 lg:mx-0">
+      <div className="relative flex flex-col h-screen mx-6 lg:mx-0">
         <Navbar openMenu={() => setIsMenuOpen(!isMenuOpen)} />
-        <div className="grid grid-cols-1 lg:grid-cols-3">
+        <main className="grid grid-cols-1 lg:grid-cols-3 flex-grow">
           <Sidebar />
           {isMenuOpen && (
             <SidebarMobile closeMenu={() => setIsMenuOpen(false)} />
@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
           <AnimatePresence exitBeforeEnter>
             <Component {...pageProps} />
           </AnimatePresence>
-        </div>
+        </main>
         <Footer />
         <a
           href="https://www.buymeacoffee.com/7BdaxfI"
