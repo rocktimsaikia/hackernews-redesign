@@ -29,7 +29,7 @@ export default function Home({ posts }) {
         <title>Hackernews Redesign - A HN client built on top of Next.js</title>
         <meta
           property="og:image"
-          content="https://hackernews.vercel.app/hn-redesign.jpeg"
+          content="/hn-redesign.png"
         />
       </Head>
       <div className="lg:col-span-2 mt-8">
