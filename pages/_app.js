@@ -32,19 +32,13 @@ function MyApp({ Component, pageProps }) {
         <Navbar openMenu={() => setIsMenuOpen(!isMenuOpen)} />
         <main className="grid grid-cols-1 lg:grid-cols-3 flex-grow">
           <Sidebar />
-          {isMenuOpen && (
-            <SidebarMobile closeMenu={() => setIsMenuOpen(false)} />
-          )}
+          {isMenuOpen && <SidebarMobile closeMenu={() => setIsMenuOpen(false)} />}
           <AnimatePresence exitBeforeEnter>
             <Component {...pageProps} />
           </AnimatePresence>
         </main>
         <Footer />
-        <a
-          href="https://www.buymeacoffee.com/7BdaxfI"
-          target="_blank"
-          className="fixed left-5 bottom-6"
-        >
+        <a href="https://www.buymeacoffee.com/rocktimcodes" target="_blank" className="fixed left-5 bottom-6">
           <CoffeeCup />
         </a>
       </div>
