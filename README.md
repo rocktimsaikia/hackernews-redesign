@@ -29,7 +29,7 @@ I am not using the official HN API because it is very poorly designed which make
 
 You can support me and my work right here :
 
-<a href="https://www.buymeacoffee.com/7BdaxfI"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" height="40px"/></a>
+<a href="https://www.buymeacoffee.com/rocktimcodes"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" height="35px"/></a>
 
 ## License
 
